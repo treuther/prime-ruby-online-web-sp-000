@@ -1,18 +1,13 @@
 # Add  code here!
-def prime?(num)
-  # check if num is less than 2.
-  # false if num < 2
-
-  # check if num is divisible by any number
-  # between 2 to (num - 1)
-  # return false on the first instance
-  (2...num).each do |factor|
-    if (num % factor).zero? || num < 2
-      return false
-    else
-      return true
+def prime?(number)
+  start = 2
+  if number > 1
+    range = (start..number-1).to_a
+    range.none? do |num_to_test| #none of the numbers should return true for none? to return true. If none of the numbers
+                                # return true, then they are not divisible by the number and the number is prime
+      number % num_to_test == 0
     end
+  else
+    false
   end
-
-  # true # after checking all numbers and not receiving false
 end
