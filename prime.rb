@@ -8,7 +8,9 @@ def prime?(num)
   # return false on the first instance
   (2...num).each do |factor|
     if (num % factor).zero? 
-      return false
+      false
+    elsif num < 2
+      false
     end
   end
   
