@@ -9,8 +9,10 @@ def prime?(num)
   (2...num).each do |factor|
     if (num % factor).zero? || num < 2
       false
+    else
+      true
     end
   end
 
-  true # after checking all numbers and not receiving false
+  # true # after checking all numbers and not receiving false
 end
